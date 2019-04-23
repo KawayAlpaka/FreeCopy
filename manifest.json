@@ -1,0 +1,44 @@
+{
+	"manifest_version": 2,
+	"name": "Free Copy",
+	"version": "1.0.0",
+	"description": "一个快速抓取网页图片的扩展",
+	"icons": {
+		"16": "img/icon.png",
+		"48": "img/icon.png",
+		"128": "img/icon.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"js/content-script.js"
+			],
+			"css": [
+				"css/free-copy.css"
+			],
+			"run_at": "document_start"
+		}
+	],
+	"background": {
+		"scripts": [
+			"js/background.js"
+		]
+	},
+	"browser_action": {
+		"default_icon": "img/icon.png",
+		"default_title": "这是一个示例Chrome插件",
+		"default_popup": "html/popup.html"
+	},
+	"homepage_url": "https://www.baidu.com",
+	"web_accessible_resources": [
+		"js/free-copy.js"
+	],
+	"permissions": [
+		"contextMenus",
+		"tabs",
+		"storage"
+	]
+}
