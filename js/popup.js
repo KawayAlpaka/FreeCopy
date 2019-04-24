@@ -1,5 +1,4 @@
-console.log("popup.js");
-
+// console.log("popup.js");
 function sendMessageToContentScript(message, callback)
 {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs)
@@ -23,6 +22,7 @@ btnRecoverRightClick.addEventListener("click",function(){
   //   chrome.storage.local.set({"recover-right-click": 0});
   // }
   sendMessageToContentScript({cmd:'recover-right-click'});
+  document.querySelector(".msg").innerHTML = "恢复完成";
 },false);
 // window.addEventListener("storage", function (e) {
 //   console.log(e);

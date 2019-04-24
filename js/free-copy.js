@@ -1,5 +1,5 @@
 (function(){
-  console.log("free-copy.js");
+  // console.log("free-copy.js");
   // 禁止篡改复制内容
   var blockAll = function(e){
     e.stopImmediatePropagation();
@@ -7,12 +7,13 @@
   window.addEventListener("copy",blockAll,true);
 
   const selectName = "free-copy-select";
+
   window.addEventListener("message", function(e)
   {
-    // console.log("message:",e);
-    if(e.data.type == "catchImg"){
-      startFind();
-    }
+    console.log("message:",e);
+    // if(e.data.type == "catchImg"){
+    //   startFind();
+    // }
     if(e.data.type == "catchAllImg"){
       // console.log("catchAllImg");
       catchImg(document.body);
@@ -31,8 +32,6 @@
     var rs = [];
     var target = node;
     var insert = function(node,url){
-      // console.log(node);
-      // console.log(url);
       if(rs.findIndex(function(r){ return r.url == url }) < 0){
         rs.push({
           tag: node.tagName,
@@ -52,12 +51,12 @@
           insert(node,backgroundImage.replace(regUrl,"$1"));
         }
       }
-      // iframe
-      if (node.tagName.toLowerCase() == "iframe"){
-        if(node.contentDocument){
-          deal(node.contentDocument.querySelector("body"));
-        }
-      }
+      // // iframe // 不采用遍历方案，因为跨域iframe访问不到dom，已经换成注入方案
+      // if (node.tagName.toLowerCase() == "iframe"){
+      //   if(node.contentDocument){
+      //     deal(node.contentDocument.querySelector("body"));
+      //   }
+      // }
       // svg
       if (node.tagName.toLowerCase() == "svg"){
         insert(node,node.outerHTML);
@@ -71,12 +70,8 @@
       }
     }
     deal(target);
-    if(rs.length > 0){
-      showResult(rs);
-    }else{
-      alert("没有找到图片");
-    }
-  }
+    showResult(rs);
+  };
   var showResult = function(results){
     window.postMessage({"type": 'showImg',results}, '*');
   };

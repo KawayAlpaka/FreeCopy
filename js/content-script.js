@@ -1,4 +1,4 @@
-// console.log("free-copy");
+// console.log("free-copy content-script");
 function injectCustomJs(jsPath,callback)
 {
     jsPath = jsPath || 'js/free-copy.js';
