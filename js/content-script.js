@@ -31,7 +31,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
   if(request.cmd == 'recover-right-click') {
     window.postMessage({"type": 'recover-right-click'}, '*');
   }
-  // sendResponse('我收到了你的消息！');
+  sendResponse('我收到了你的消息！');
 });
 
 

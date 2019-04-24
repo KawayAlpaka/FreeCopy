@@ -14,14 +14,12 @@ function sendMessageToContentScript(message, callback)
     });
 }
 function catchImg(){
-  sendMessageToContentScript({cmd:'catchImg'}, function(response)
-  {
+  sendMessageToContentScript({cmd:'catchImg'}, function(response){
       // console.log('来自content的回复：'+response);
   });
 };
 function catchAllImg(){
-  sendMessageToContentScript({cmd:'catchAllImg'}, function(response)
-  {
+  sendMessageToContentScript({cmd:'catchAllImg'}, function(response){
       // console.log('来自content的回复：'+response);
   });
 };
