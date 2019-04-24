@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Free Copy",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "一个快速抓取网页图片的扩展",
 	"icons": {
 		"16": "img/icon.png",
