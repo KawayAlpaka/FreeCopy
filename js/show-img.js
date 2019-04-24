@@ -19,6 +19,10 @@ var insert = function(results){
           link.href = result.url;
           img.src = result.url;
         }
+        img.addEventListener("error",function(e){
+          // console.log("error:",e,img);
+          link.remove();
+        },false);
         panel.appendChild(link);
       }
     });
