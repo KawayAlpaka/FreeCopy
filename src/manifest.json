@@ -33,7 +33,7 @@
 		"default_title": "快速抓取网页图片的小工具",
 		"default_popup": "html/popup.html"
 	},
-	"homepage_url": "https://www.baidu.com",
+	"homepage_url": "https://freecopy.yangtuos.com",
 	"web_accessible_resources": [
 		"js/free-copy.js"
 	],
