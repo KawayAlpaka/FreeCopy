@@ -40,7 +40,6 @@
 	],
 	"permissions": [
 		"contextMenus",
-		"tabs",
-		"storage"
+		"tabs"
 	]
 }

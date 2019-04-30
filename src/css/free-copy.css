@@ -1,12 +1,3 @@
-/* body {
-  background-color: #3ddc3952!important;
-} */
 * {
   user-select: text!important;
 }
-
-/* .free-copy-select {
-  outline: #4d335a solid 3px !important;
-  box-shadow: #4d335a 0px 0px 0px 3px inset !important;
-  filter: saturate(200%)!important;
-} */

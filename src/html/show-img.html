@@ -4,23 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>检查结果</title>
+  <title>【Free Copy】抓取结果</title>
   <style>
     .template{
-      display: none;
+      display: none !important;
+    }
+    .img-link{
+      display: inline-block;
+      vertical-align: top;
+      margin: 10px;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .img-link .type{
+      font-size: 16px;
+      font-weight: bold;
+      color: black;
     }
     .img-link img{
-      width: 200px;
-      height: 200px;
+      width: 160px;
+      height: 160px;
       object-fit: scale-down;
       border: solid 1px #ddd;
+    }
+    .img-link:hover{
+      transform: scale(1.1);
+      /* filter: brightness(1.2); */
     }
   </style>
 </head>
 <body>
-  <div><h2>图片集：</h2></div>
+  <!-- <div><h2>图片集：</h2></div> -->
   <div class="imgs-panel">
       <a class="template img-link" target="_blank">
+        <div class="type"></div>
         <img class="img" >
       </a>
   </div>

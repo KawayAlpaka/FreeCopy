@@ -1,5 +1,4 @@
 (function(){
-  // console.log("free-copy.js");
   // 禁止篡改复制内容
   var blockAll = function(e){
     e.stopImmediatePropagation();
@@ -10,12 +9,7 @@
 
   window.addEventListener("message", function(e)
   {
-    console.log("message:",e);
-    // if(e.data.type == "catchImg"){
-    //   startFind();
-    // }
     if(e.data.type == "catchAllImg"){
-      // console.log("catchAllImg");
       catchImg(document.body);
     }
     if(e.data.type == "recover-right-click"){

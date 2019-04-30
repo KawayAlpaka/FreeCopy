@@ -1,4 +1,3 @@
-// console.log("free-copy content-script");
 function injectCustomJs(jsPath,callback)
 {
     jsPath = jsPath || 'js/free-copy.js';
@@ -12,13 +11,7 @@ function injectCustomJs(jsPath,callback)
     };
     document.documentElement.appendChild(temp);
 }
-injectCustomJs('js/free-copy.js',function(){
-  // chrome.storage.local.get({"recover-right-click": 'red'}, function(items) {
-  //   if(items["recover-right-click"]){
-  //     window.postMessage({"type": 'recover-right-click'}, '*');
-  //   }
-  // });
-});
+injectCustomJs('js/free-copy.js',function(){});
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
 {
@@ -44,6 +37,6 @@ window.addEventListener("message", function(e)
 
 var showImg = function(results){
   chrome.runtime.sendMessage({type: 'showImg',results}, function(response) {
-    // console.log('收到来自后台的回复：' + response);
+    // response 回复内容
   });
 };

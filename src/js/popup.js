@@ -1,4 +1,3 @@
-// console.log("popup.js");
 function sendMessageToContentScript(message, callback)
 {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs)
@@ -11,9 +10,9 @@ function sendMessageToContentScript(message, callback)
 }
 
 var btnRecoverRightClick = document.querySelector("#recover-right-click");
-chrome.storage.local.get({"recover-right-click": 'red'}, function(items) {
-  btnRecoverRightClick.checked = items["recover-right-click"];
-});
+// chrome.storage.local.get({"recover-right-click": 'red'}, function(items) {
+//   btnRecoverRightClick.checked = items["recover-right-click"];
+// });
 btnRecoverRightClick.addEventListener("click",function(){
   // if(btnRecoverRightClick.checked){
   //   sendMessageToContentScript({cmd:'recover-right-click'});

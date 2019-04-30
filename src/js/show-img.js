@@ -8,6 +8,7 @@ var insert = function(results){
         rs.push(result);
         var link = template.cloneNode(true);
         var img = link.querySelector(".img");
+        var type = link.querySelector(".type");
         link.classList.remove("template");
         // 处理svg
         if(result.tag == "svg"){
@@ -15,15 +16,21 @@ var insert = function(results){
           var dataUrl = URL.createObjectURL(file);
           img.src = dataUrl;
           link.href = dataUrl;
+          // type.innerHTML = "svg (矢量图)";
         }else{
           link.href = result.url;
           img.src = result.url;
+          // type.innerHTML = "image (位图)";
         }
         img.addEventListener("error",function(e){
           // console.log("error:",e,img);
           link.remove();
         },false);
-        panel.appendChild(link);
+        if(panel.firstElementChild){
+          panel.insertBefore(link,panel.firstElementChild);
+        }else{
+          panel.appendChild(link);
+        }
       }
     });
   }
