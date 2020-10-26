@@ -1,3 +1,8 @@
+// console.log("content-script");
+// console.log(document.head);
+// document.addEventListener("readystatechange",function(e){
+//   console.log("readystatechange:",e);
+// });
 function injectCustomJs(jsPath,callback)
 {
     jsPath = jsPath || 'js/free-copy.js';

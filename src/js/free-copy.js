@@ -14,6 +14,20 @@
     }
     if(e.data.type == "recover-right-click"){
       window.addEventListener("contextmenu",blockAll,true);
+
+      // // js限制选择的文字的方式
+      // document.querySelectorAll("*").forEach(e=>{ e.onmousedown = new Function("return false");e.onmouseup = new Function("return true"); })
+      // document.onmousedown = new Function("return false");
+      // document.onmouseup = new Function("return true");
+      // document.onselectstart = new Function("return false");   
+
+      // 解除限制的方式
+      window.addEventListener("mousedown",blockAll,true);
+      window.addEventListener("mouseup",blockAll,true);
+      window.addEventListener("selectstart",blockAll,true);
+      // document.onmousedown = null;
+      // document.onmouseup = null;
+      // document.onselectstart = null;
     }
   }, false);
 
