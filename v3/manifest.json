@@ -1,5 +1,5 @@
 {
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"name": "Free Copy",
 	"short_name": "图片抓取工具",
 	"version": "0.0.6",
@@ -25,22 +25,28 @@
 		}
 	],
 	"background": {
-		"scripts": [
-			"js/background.js"
-		]
+		"service_worker": "js/background.js"
 	},
-	"browser_action": {
+	"action": {
 		"default_icon": "img/icon/48.png",
 		"default_title": "快速抓取网页图片的小工具",
 		"default_popup": "html/popup.html"
 	},
-	"update_url":"http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query",
+	"update_url": "http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query",
 	"homepage_url": "https://freecopy.yangtuos.com",
 	"web_accessible_resources": [
-		"js/free-copy.js"
+		{
+			"resources": [
+				"js/free-copy.js"
+			],
+			"matches": [
+				"<all_urls>"
+			]
+		}
 	],
 	"permissions": [
 		"contextMenus",
-		"tabs"
+		"tabs",
+		"scripting"
 	]
 }
