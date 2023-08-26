@@ -38,9 +38,10 @@ var insert = function (results) {
 
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  sendResponse('res')
   if (request.type === "insertResults") {
     // console.log('results:', request.results)
     insert(request.results)
   }
-  sendResponse('res')
+
 });

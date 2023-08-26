@@ -2,7 +2,7 @@
 	"manifest_version": 3,
 	"name": "Free Copy",
 	"short_name": "图片抓取工具",
-	"version": "0.0.6",
+	"version": "0.1.0",
 	"description": "一个解放网页限制，快速抓取网页图片的小工具（支持 img / background / svg）",
 	"icons": {
 		"16": "img/icon/16.png",
@@ -32,7 +32,6 @@
 		"default_title": "快速抓取网页图片的小工具",
 		"default_popup": "html/popup.html"
 	},
-	"update_url": "http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query",
 	"homepage_url": "https://freecopy.yangtuos.com",
 	"web_accessible_resources": [
 		{
@@ -46,7 +45,6 @@
 	],
 	"permissions": [
 		"contextMenus",
-		"tabs",
-		"scripting"
+		"tabs"
 	]
 }

@@ -75,7 +75,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
       insertResults(request.results)
     }
   }
-  // sendResponse('我是后台，我已收到你的消息：' + JSON.stringify(request));
+  sendResponse('我是后台，我已收到你的消息：' + JSON.stringify(request));
 });
 
 
